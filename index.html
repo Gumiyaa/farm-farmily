@@ -1,0 +1,1024 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pertanian Keluarga - Hasil Bumi Terbaik</title>
+    <meta name="description" content="Pertanian keluarga yang mengelola sawah secara turun-temurun dengan metode alami dan organik.">
+
+    <!-- Google Fonts: Poppins -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+
+    <!-- AOS (Animate On Scroll) -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+
+    <!-- SwiperJS CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/11.0.5/swiper-bundle.min.css" rel="stylesheet">
+
+    <!-- Lightbox2 CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.5/css/lightbox.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-bs-spy="scroll" data-bs-target="#mainNav" data-bs-offset="80">
+
+    <!-- ==========================================
+         LOADING SCREEN
+    =========================================== -->
+    <div id="loadingScreen" class="loading-screen">
+        <div class="loader">
+            <div class="loader-icon">
+                <i class="fa-solid fa-leaf"></i>
+            </div>
+            <div class="loader-text">Pertanian Keluarga</div>
+            <div class="loader-bar">
+                <div class="loader-bar-fill"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==========================================
+         SCROLL PROGRESS BAR
+    =========================================== -->
+    <div class="scroll-progress" id="scrollProgress"></div>
+
+    <!-- ==========================================
+         NAVBAR
+    =========================================== -->
+    <nav class="navbar navbar-expand-lg fixed-top" id="mainNav">
+        <div class="container">
+            <!-- Logo -->
+            <a class="navbar-brand" href="#hero">
+                <i class="fa-solid fa-seedling"></i> Pertanian Keluarga
+            </a>
+
+            <!-- Mobile Toggle -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent"
+                aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Navbar Links -->
+            <div class="collapse navbar-collapse" id="navbarContent">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item"><a class="nav-link active" href="#hero">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#tentang">Tentang</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#tanaman">Tanaman</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#jadwal">Jadwal</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#panen">Panen</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#galeri">Galeri</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#artikel">Artikel</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#testimoni">Testimoni</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#kontak">Kontak</a></li>
+                </ul>
+
+                <!-- Dark Mode Toggle -->
+                <button class="dark-mode-btn ms-3" id="darkModeToggle" title="Toggle Dark Mode">
+                    <i class="fa-solid fa-moon"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ==========================================
+         HERO SECTION
+    =========================================== -->
+    <section id="hero" class="hero-section">
+        <div class="hero-overlay"></div>
+        <div class="hero-particles" id="heroParticles"></div>
+        <div class="container hero-content">
+            <div class="row justify-content-center text-center">
+                <div class="col-lg-10">
+                    <h1 class="hero-title" data-aos="fade-up" data-aos-duration="1000">
+                        Pertanian Keluarga
+                    </h1>
+                    <p class="hero-subtitle" data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000">
+                        Hasil pertanian organik terbaik langsung dari sawah keluarga kami ke meja makan Anda.
+                        Kami mengelola lahan secara turun-temurun dengan penuh cinta dan dedikasi.
+                    </p>
+                    <div class="hero-buttons" data-aos="fade-up" data-aos-delay="400" data-aos-duration="1000">
+                        <a href="#tanaman" class="btn btn-primary-custom me-3 mb-2">
+                            <i class="fa-solid fa-seedling me-2"></i>Lihat Tanaman
+                        </a>
+                        <a href="#kontak" class="btn btn-outline-custom mb-2">
+                            <i class="fa-solid fa-envelope me-2"></i>Hubungi Kami
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Scroll Indicator -->
+        <div class="scroll-indicator" data-aos="fade-up" data-aos-delay="800">
+            <div class="mouse">
+                <div class="wheel"></div>
+            </div>
+            <span>Scroll Down</span>
+        </div>
+    </section>
+
+    <!-- ==========================================
+         TENTANG KAMI SECTION
+    =========================================== -->
+    <section id="tentang" class="section-padding">
+        <div class="container">
+            <div class="row align-items-center">
+                <!-- Gambar Petani -->
+                <div class="col-lg-6 mb-5 mb-lg-0" data-aos="fade-right" data-aos-duration="1000">
+                    <div class="tentang-image-wrapper">
+                        <img src="https://gkmdblog.s3.ap-southeast-1.amazonaws.com/wp-content/uploads/2024/01/29171438/Blog-banner-_-Pahami-Dengan-Mudah-Jenis-jenis-Sawah-di-Indonesia-.jpg" alt="Petani Keluarga"
+                            class="img-fluid rounded-4 shadow-lg">
+                        <div class="tentang-badge" data-aos="zoom-in" data-aos-delay="300">
+                            <span class="badge-number">25+</span>
+                            <span class="badge-text">Tahun Pengalaman</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Teks Tentang -->
+                <div class="col-lg-6" data-aos="fade-left" data-aos-duration="1000">
+                    <div class="section-tag">
+                        <i class="fa-solid fa-leaf"></i> Tentang Kami
+                    </div>
+                    <h2 class="section-title">Keluarga Petani Sejati</h2>
+                    <p class="section-text">
+                        Kami adalah keluarga petani yang telah mengelola lahan pertanian secara turun-temurun
+                        selama lebih dari 25 tahun. Bermula dari kakek kami yang pertama kali membuka lahan
+                        pertanian di desa ini, kini kami melanjutkan tradisi dengan menggabungkan metode
+                        tradisional dan teknologi modern.
+                    </p>
+                    <p class="section-text">
+                        Setiap tanaman yang kami tanam dirawat dengan penuh kasih sayang tanpa menggunakan
+                        bahan kimia berbahaya. Kami percaya bahwa hasil pertanian yang baik dimulai dari
+                        tanah yang sehat dan petani yang peduli.
+                    </p>
+                    <div class="row g-3 mt-4">
+                        <div class="col-6">
+                            <div class="tentang-feature">
+                                <i class="fa-solid fa-leaf text-success"></i>
+                                <div>
+                                    <h6>100% Organik</h6>
+                                    <small>Tanpa bahan kimia</small>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="tentang-feature">
+                                <i class="fa-solid fa-users text-success"></i>
+                                <div>
+                                    <h6>Keluarga Besar</h6>
+                                    <small>15+ anggota aktif</small>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="tentang-feature">
+                                <i class="fa-solid fa-tractor text-success"></i>
+                                <div>
+                                    <h6>Lahan Luas</h6>
+                                    <small>3 hektar sawah</small>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="tentang-feature">
+                                <i class="fa-solid fa-trophy text-success"></i>
+                                <div>
+                                    <h6>Berprestasi</h6>
+                                    <small>Petani terbaik desa</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================
+         TANAMAN SECTION
+    =========================================== -->
+    <section id="tanaman" class="section-padding bg-light">
+        <div class="container">
+            <!-- Section Header -->
+            <div class="text-center mb-5" data-aos="fade-up" data-aos-duration="1000">
+                <div class="section-tag mx-auto">
+                    <i class="fa-solid fa-seedling"></i> Produk Kami
+                </div>
+                <h2 class="section-title">Tanaman Kami</h2>
+                <p class="section-subtitle">
+                    Berbagai jenis sayuran dan padi organik yang kami tanam dengan penuh perhatian.
+                </p>
+            </div>
+
+            <!-- Plant Cards -->
+            <div class="row g-4">
+                <!-- Padi -->
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="0" data-aos-duration="800">
+                    <div class="plant-card">
+                        <div class="plant-card-img">
+                            <img src="https://diperpa.badungkab.go.id/storage/olds/diperpa/Varietas-Unggul-Baru-Padi-Untuk-Lahan-Sawah-Tadah-Hujan_187730.jpg" alt="Padi">
+                            <div class="plant-card-overlay">
+                                <a href="https://diperpa.badungkab.go.id/storage/olds/diperpa/Varietas-Unggul-Baru-Padi-Untuk-Lahan-Sawah-Tadah-Hujan_187730.jpg" data-lightbox="tanaman" data-title="Padi" class="btn btn-light btn-sm">
+                                    <i class="fa-solid fa-expand"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="plant-card-body">
+                            <h5 class="plant-card-title">Padi</h5>
+                            <p class="plant-card-desc">Tanaman padi unggul dengan varietas IR64, menghasilkan beras berkualitas tinggi dan pulen.</p>
+                            <div class="plant-card-meta">
+                                <span><i class="fa-solid fa-clock"></i> 3-4 Bulan</span>
+                                <span><i class="fa-solid fa-calendar"></i> Nov - Mar</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Jagung -->
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100" data-aos-duration="800">
+                    <div class="plant-card">
+                        <div class="plant-card-img">
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQcvF-A4FjDM6KvKSiGH0Slr4nmFOJbR4Uh4atkCvvQGjS-_-Nan_CYDJhv&s=10" alt="Jagung">
+                            <div class="plant-card-overlay">
+                                <a href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQcvF-A4FjDM6KvKSiGH0Slr4nmFOJbR4Uh4atkCvvQGjS-_-Nan_CYDJhv&s=10" data-lightbox="tanaman" data-title="Jagung" class="btn btn-light btn-sm">
+                                    <i class="fa-solid fa-expand"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="plant-card-body">
+                            <h5 class="plant-card-title">Jagung</h5>
+                            <p class="plant-card-desc">Jagung manis lokal yang cocok untuk dimakan langsung atau diolah menjadi berbagai produk.</p>
+                            <div class="plant-card-meta">
+                                <span><i class="fa-solid fa-clock"></i> 2-3 Bulan</span>
+                                <span><i class="fa-solid fa-calendar"></i> Okt - Feb</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Cabai -->
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200" data-aos-duration="800">
+                    <div class="plant-card">
+                        <div class="plant-card-img">
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRSWqoJxcXnREZ8ZuI23YNjoeTUhamtOonPuv5GkdCa6fA_u_32bqD4mHs&s=10" alt="Cabai">
+                            <div class="plant-card-overlay">
+                                <a href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRSWqoJxcXnREZ8ZuI23YNjoeTUhamtOonPuv5GkdCa6fA_u_32bqD4mHs&s=10" data-lightbox="tanaman" data-title="Cabai" class="btn btn-light btn-sm">
+                                    <i class="fa-solid fa-expand"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="plant-card-body">
+                            <h5 class="plant-card-title">Cabai</h5>
+                            <p class="plant-card-desc">Cabai merah keriting dan cabai rawit dengan rasa pedas khas yang menjadi favorit.</p>
+                            <div class="plant-card-meta">
+                                <span><i class="fa-solid fa-clock"></i> 3-4 Bulan</span>
+                                <span><i class="fa-solid fa-calendar"></i> Sep - Jan</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Kangkung -->
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="0" data-aos-duration="800">
+                    <div class="plant-card">
+                        <div class="plant-card-img">
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTNT2Am_OGBkBsSa0g3llmvDfywsxYa0rRsClhzNeWYc0P9YDGgEESvr-5Q&s=10" alt="Kangkung">
+                            <div class="plant-card-overlay">
+                                <a href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTNT2Am_OGBkBsSa0g3llmvDfywsxYa0rRsClhzNeWYc0P9YDGgEESvr-5Q&s=10" data-lightbox="tanaman" data-title="Kangkung" class="btn btn-light btn-sm">
+                                    <i class="fa-solid fa-expand"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="plant-card-body">
+                            <h5 class="plant-card-title">Kangkung</h5>
+                            <p class="plant-card-desc">Kangkung air segar yang cepat tumbuh dan cocok untuk berbagai masakan rumahan.</p>
+                            <div class="plant-card-meta">
+                                <span><i class="fa-solid fa-clock"></i> 3-4 Minggu</span>
+                                <span><i class="fa-solid fa-calendar"></i> Sep - Mar</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Terong -->
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100" data-aos-duration="800">
+                    <div class="plant-card">
+                        <div class="plant-card-img">
+                            <img src="https://desapulutan.gunungkidulkab.go.id/assets/files/artikel/sedang_1523929413cara-menanam-terong.jpg" alt="Terong">
+                            <div class="plant-card-overlay">
+                                <a href="https://desapulutan.gunungkidulkab.go.id/assets/files/artikel/sedang_1523929413cara-menanam-terong.jpg" data-lightbox="tanaman" data-title="Terong" class="btn btn-light btn-sm">
+                                    <i class="fa-solid fa-expand"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="plant-card-body">
+                            <h5 class="plant-card-title">Terong</h5>
+                            <p class="plant-card-desc">Terong ungu lokal dengan tekstur lembut, cocok untuk balado, goreng, atau bakar.</p>
+                            <div class="plant-card-meta">
+                                <span><i class="fa-solid fa-clock"></i> 3-4 Bulan</span>
+                                <span><i class="fa-solid fa-calendar"></i> Jul - Okt</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tomat -->
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200" data-aos-duration="800">
+                    <div class="plant-card">
+                        <div class="plant-card-img">
+                            <img src="https://imgx.sonora.id/crop/0x0:0x0/x/photo/2023/04/26/63cf285552dcfjpg-20230426085134.jpg" alt="Tomat">
+                            <div class="plant-card-overlay">
+                                <a href="https://imgx.sonora.id/crop/0x0:0x0/x/photo/2023/04/26/63cf285552dcfjpg-20230426085134.jpg" data-lightbox="tanaman" data-title="Tomat" class="btn btn-light btn-sm">
+                                    <i class="fa-solid fa-expand"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="plant-card-body">
+                            <h5 class="plant-card-title">Tomat</h5>
+                            <p class="plant-card-desc">Tomat merah segar kaya vitamin C, ideal untuk saus, salad, atau dimakan segar.</p>
+                            <div class="plant-card-meta">
+                                <span><i class="fa-solid fa-clock"></i> 2-3 Bulan</span>
+                                <span><i class="fa-solid fa-calendar"></i> Agu - Des</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================
+         JADWAL TANAM SECTION
+    =========================================== -->
+    <section id="jadwal" class="section-padding">
+        <div class="container">
+            <!-- Section Header -->
+            <div class="text-center mb-5" data-aos="fade-up" data-aos-duration="1000">
+                <div class="section-tag mx-auto">
+                    <i class="fa-solid fa-calendar-days"></i> Perencanaan
+                </div>
+                <h2 class="section-title">Jadwal Tanam</h2>
+                <p class="section-subtitle">
+                    Rencana penanaman sepanjang tahun untuk memastikan pasokan stabil.
+                </p>
+            </div>
+
+            <!-- Schedule Table -->
+            <div class="table-responsive" data-aos="fade-up" data-aos-duration="1000">
+                <table class="table table-hover schedule-table">
+                    <thead>
+                        <tr>
+                            <th>Bulan</th>
+                            <th>Tanaman</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><i class="fa-regular fa-calendar me-2"></i>Januari</td>
+                            <td>Padi, Cabai</td>
+                            <td><span class="badge bg-success">Sedang Tumbuh</span></td>
+                        </tr>
+                        <tr>
+                            <td><i class="fa-regular fa-calendar me-2"></i>Februari</td>
+                            <td>Padi, Jagung</td>
+                            <td><span class="badge bg-success">Sedang Tumbuh</span></td>
+                        </tr>
+                        <tr>
+                            <td><i class="fa-regular fa-calendar me-2"></i>Maret</td>
+                            <td>Tomat, Kangkung</td>
+                            <td><span class="badge bg-warning text-dark">Mulai Tanam</span></td>
+                        </tr>
+                        <tr>
+                            <td><i class="fa-regular fa-calendar me-2"></i>April</td>
+                            <td>Padi, Cabai</td>
+                            <td><span class="badge bg-info text-dark">Sedang Panen</span></td>
+                        </tr>
+                        <tr>
+                            <td><i class="fa-regular fa-calendar me-2"></i>Mei</td>
+                            <td>Terong, Kangkung</td>
+                            <td><span class="badge bg-success">Sedang Tumbuh</span></td>
+                        </tr>
+                        <tr>
+                            <td><i class="fa-regular fa-calendar me-2"></i>Juni</td>
+                            <td>Jagung, Tomat</td>
+                            <td><span class="badge bg-success">Sedang Tumbuh</span></td>
+                        </tr>
+                        <tr>
+                            <td><i class="fa-regular fa-calendar me-2"></i>Juli</td>
+                            <td>Terong, Cabai</td>
+                            <td><span class="badge bg-warning text-dark">Mulai Tanam</span></td>
+                        </tr>
+                        <tr>
+                            <td><i class="fa-regular fa-calendar me-2"></i>Agustus</td>
+                            <td>Tomat, Kangkung</td>
+                            <td><span class="badge bg-success">Sedang Tumbuh</span></td>
+                        </tr>
+                        <tr>
+                            <td><i class="fa-regular fa-calendar me-2"></i>September</td>
+                            <td>Cabai, Kangkung</td>
+                            <td><span class="badge bg-success">Sedang Tumbuh</span></td>
+                        </tr>
+                        <tr>
+                            <td><i class="fa-regular fa-calendar me-2"></i>Oktober</td>
+                            <td>Padi, Jagung</td>
+                            <td><span class="badge bg-warning text-dark">Mulai Tanam</span></td>
+                        </tr>
+                        <tr>
+                            <td><i class="fa-regular fa-calendar me-2"></i>November</td>
+                            <td>Padi, Terong</td>
+                            <td><span class="badge bg-success">Sedang Tumbuh</span></td>
+                        </tr>
+                        <tr>
+                            <td><i class="fa-regular fa-calendar me-2"></i>Desember</td>
+                            <td>Tomat, Jagung</td>
+                            <td><span class="badge bg-info text-dark">Sedang Panen</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================
+         HASIL PANEN SECTION
+    =========================================== -->
+    <section id="panen" class="section-padding bg-light">
+        <div class="container">
+            <!-- Section Header -->
+            <div class="text-center mb-5" data-aos="fade-up" data-aos-duration="1000">
+                <div class="section-tag mx-auto">
+                    <i class="fa-solid fa-chart-line"></i> Statistik
+                </div>
+                <h2 class="section-title">Hasil Panen</h2>
+                <p class="section-subtitle">
+                    Pencapaian hasil panen pertanian keluarga dari tahun ke tahun.
+                </p>
+            </div>
+
+            <!-- Statistics Cards -->
+            <div class="row g-4 mb-5">
+                <div class="col-lg-3 col-md-6" data-aos="zoom-in" data-aos-delay="0">
+                    <div class="stat-card">
+                        <div class="stat-icon"><i class="fa-solid fa-map-location-dot"></i></div>
+                        <h3 class="stat-number" data-target="3">0</h3>
+                        <p class="stat-label">Total Lahan (Hektar)</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="stat-card">
+                        <div class="stat-icon"><i class="fa-solid fa-seedling"></i></div>
+                        <h3 class="stat-number" data-target="6">0</h3>
+                        <p class="stat-label">Jenis Tanaman</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="stat-card">
+                        <div class="stat-icon"><i class="fa-solid fa-weight-hanging"></i></div>
+                        <h3 class="stat-number" data-target="13">0</h3>
+                        <p class="stat-label">Total Panen (Ton)</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6" data-aos="zoom-in" data-aos-delay="300">
+                    <div class="stat-card">
+                        <div class="stat-icon"><i class="fa-solid fa-calendar-check"></i></div>
+                        <h3 class="stat-number" data-target="25">0</h3>
+                        <p class="stat-label">Tahun Bertani</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Chart -->
+            <div class="row justify-content-center" data-aos="fade-up" data-aos-duration="1000">
+                <div class="col-lg-8">
+                    <div class="chart-wrapper">
+                        <canvas id="harvestChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================
+         GALERI SECTION
+    =========================================== -->
+    <section id="galeri" class="section-padding">
+        <div class="container">
+            <!-- Section Header -->
+            <div class="text-center mb-5" data-aos="fade-up" data-aos-duration="1000">
+                <div class="section-tag mx-auto">
+                    <i class="fa-solid fa-images"></i> Galeri
+                </div>
+                <h2 class="section-title">Galeri Kegiatan</h2>
+                <p class="section-subtitle">
+                    Dokumentasi kegiatan pertanian keluarga dari sawah hingga panen.
+                </p>
+            </div>
+
+            <!-- Gallery Grid -->
+            <div class="row g-3 gallery-grid">
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="0">
+                    <div class="gallery-item">
+                        <a href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSRj3yOwZ73jLJsHvJGqlqDbzJSHs4ntRJKdfuAS-YHyGeF45M69D2u3zo&s=10" data-lightbox="galeri" data-title="Persiapan Lahan">
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSRj3yOwZ73jLJsHvJGqlqDbzJSHs4ntRJKdfuAS-YHyGeF45M69D2u3zo&s=10" alt="Persiapan Lahan" class="img-fluid">
+                            <div class="gallery-overlay">
+                                <i class="fa-solid fa-expand"></i>
+                            </div>
+                        </a>
+                        <div class="gallery-caption">Membajak sawah dengan traktor agar tanah siap ditanami.</div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                    <div class="gallery-item">
+                        <a href="https://i.pinimg.com/originals/92/dc/a9/92dca99c956ae42d732d7acc92d562e6.jpg" data-lightbox="galeri" data-title="Menanam Bibit">
+                            <img src="https://i.pinimg.com/originals/92/dc/a9/92dca99c956ae42d732d7acc92d562e6.jpg" alt="Menanam Bibit" class="img-fluid">
+                            <div class="gallery-overlay">
+                                <i class="fa-solid fa-expand"></i>
+                            </div>
+                        </a>
+                        <div class="gallery-caption">Menanam bibit padi unggul secara manual dengan penuh kesabaran.</div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+                    <div class="gallery-item">
+                        <a href="https://img.antarafoto.com/cache/1200x800/2024/02/22/penyemprotan-pestisida-tanaman-padi-di-jombang-1ab7f-dom.jpg" data-lightbox="galeri" data-title="Perawatan Tanaman">
+                            <img src="https://img.antarafoto.com/cache/1200x800/2024/02/22/penyemprotan-pestisida-tanaman-padi-di-jombang-1ab7f-dom.jpg" alt="Perawatan Tanaman" class="img-fluid">
+                            <div class="gallery-overlay">
+                                <i class="fa-solid fa-expand"></i>
+                            </div>
+                        </a>
+                        <div class="gallery-caption">Menyemprot pestisida alami untuk melindungi tanaman dari hama.</div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="0">
+                    <div class="gallery-item">
+                        <a href="https://cdn.antaranews.com/cache/1200x800/2019/01/PANEN.jpg" data-lightbox="galeri" data-title="Panen Raya">
+                            <img src="https://cdn.antaranews.com/cache/1200x800/2019/01/PANEN.jpg" alt="Panen Raya" class="img-fluid">
+                            <div class="gallery-overlay">
+                                <i class="fa-solid fa-expand"></i>
+                            </div>
+                        </a>
+                        <div class="gallery-caption">Panen raya padi bersama keluarga — hasil kerja keras selama berbulan-bulan.</div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                    <div class="gallery-item">
+                        <a href="https://www.jombangkab.go.id/storage/gambar/upload_2b3e10722eb19b25260901db77b6eb59.jpeg" data-lightbox="galeri" data-title="Pengolahan Tanah">
+                            <img src="https://www.jombangkab.go.id/storage/gambar/upload_2b3e10722eb19b25260901db77b6eb59.jpeg" alt="Pengolahan Tanah" class="img-fluid">
+                            <div class="gallery-overlay">
+                                <i class="fa-solid fa-expand"></i>
+                            </div>
+                        </a>
+                        <div class="gallery-caption">Mengolah tanah dengan traktor agar gembur dan subur siap tanam.</div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+                    <div class="gallery-item">
+                        <a href="https://i.cdn.newsbytesapp.com/ind/images/l80520251120134533.jpeg" data-lightbox="galeri" data-title="Hasil Panen Segar">
+                            <img src="https://i.cdn.newsbytesapp.com/ind/images/l80520251120134533.jpeg" alt="Hasil Panen" class="img-fluid">
+                            <div class="gallery-overlay">
+                                <i class="fa-solid fa-expand"></i>
+                            </div>
+                        </a>
+                        <div class="gallery-caption">Hasil panen segar siap didistribusikan ke pelanggan setia.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================
+         ARTIKEL SECTION
+    =========================================== -->
+    <section id="artikel" class="section-padding bg-light">
+        <div class="container">
+            <!-- Section Header -->
+            <div class="text-center mb-5" data-aos="fade-up" data-aos-duration="1000">
+                <div class="section-tag mx-auto">
+                    <i class="fa-solid fa-newspaper"></i> Artikel
+                </div>
+                <h2 class="section-title">Artikel & Tips</h2>
+                <p class="section-subtitle">
+                    Tips dan trik pertanian dari pengalaman bertahun-tahun kami.
+                </p>
+            </div>
+
+            <!-- Article Cards -->
+            <div class="row g-4">
+                <!-- Artikel 1 -->
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="0" data-aos-duration="800">
+                    <div class="article-card">
+                        <div class="article-img">
+                            <img src="https://cnc-magazine.oramiland.com/parenting/images/cara_menanam_padi.width-800.format-webp.webp" alt="Cara Menanam Padi" class="img-fluid">
+                            <span class="article-date"><i class="fa-regular fa-calendar"></i> 15 Jan 2025</span>
+                        </div>
+                        <div class="article-body">
+                            <span class="article-category">Tips Bertani</span>
+                            <h5>Cara Menanam Padi yang Benar</h5>
+                            <p>Panduan lengkap mulai dari pemilihan bibit, pengolahan lahan, hingga masa panen padi organik.</p>
+                            <a href="#" class="article-link">Selengkapnya <i class="fa-solid fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Artikel 2 -->
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100" data-aos-duration="800">
+                    <div class="article-card">
+                        <div class="article-img">
+                            <img src="https://www.kampustani.com/wp-content/uploads/2018/11/Mengatasi-Hama-Wereng-Secara-Alami.jpg" alt="Mengatasi Hama" class="img-fluid">
+                            <span class="article-date"><i class="fa-regular fa-calendar"></i> 28 Feb 2025</span>
+                        </div>
+                        <div class="article-body">
+                            <span class="article-category">Kesehatan Tanaman</span>
+                            <h5>Mengatasi Hama Secara Alami</h5>
+                            <p>Metode pengendalian hama tanaman menggunakan bahan alami tanpa pestisida kimia berbahaya.</p>
+                            <a href="#" class="article-link">Selengkapnya <i class="fa-solid fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Artikel 3 -->
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200" data-aos-duration="800">
+                    <div class="article-card">
+                        <div class="article-img">
+                            <img src="https://gdm.id/wp-content/uploads/2026/02/Benih-padi-unggul.webp" alt="Memilih Bibit" class="img-fluid">
+                            <span class="article-date"><i class="fa-regular fa-calendar"></i> 10 Mar 2025</span>
+                        </div>
+                        <div class="article-body">
+                            <span class="article-category">Panduan</span>
+                            <h5>Tips Memilih Bibit Berkualitas</h5>
+                            <p>Cara memilih bibit tanaman yang unggul untuk hasil panen yang maksimal dan tahan penyakit.</p>
+                            <a href="#" class="article-link">Selengkapnya <i class="fa-solid fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================
+         TESTIMONI SECTION
+    =========================================== -->
+    <section id="testimoni" class="section-padding">
+        <div class="container">
+            <!-- Section Header -->
+            <div class="text-center mb-5" data-aos="fade-up" data-aos-duration="1000">
+                <div class="section-tag mx-auto">
+                    <i class="fa-solid fa-quote-left"></i> Testimoni
+                </div>
+                <h2 class="section-title">Apa Kata Mereka?</h2>
+                <p class="section-subtitle">
+                    Pendapat dari pelanggan setia dan mitra kerja kami.
+                </p>
+            </div>
+
+            <!-- Swiper Testimonials -->
+            <div class="swiper testimonial-swiper" data-aos="fade-up" data-aos-duration="1000">
+                <div class="swiper-wrapper">
+                    <!-- Testimonial 1 -->
+                    <div class="swiper-slide">
+                        <div class="testimonial-card">
+                            <div class="testimonial-quote">
+                                <i class="fa-solid fa-quote-left"></i>
+                            </div>
+                            <p class="testimonial-text">
+                                "Hasil pertanian dari keluarga ini selalu segar dan berkualitas. Sudah 3 tahun
+                                kami berlangganan untuk kebutuhan restoran kami."
+                            </p>
+                            <div class="testimonial-author">
+                                <img src="https://picsum.photos/seed/tes1/80/80" alt="Budi Santoso" class="testimonial-avatar">
+                                <div>
+                                    <h6 class="testimonial-name">Budi Santoso</h6>
+                                    <small class="testimonial-role">Pemilik Restoran Hijau</small>
+                                </div>
+                            </div>
+                            <div class="testimonial-rating">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Testimonial 2 -->
+                    <div class="swiper-slide">
+                        <div class="testimonial-card">
+                            <div class="testimonial-quote">
+                                <i class="fa-solid fa-quote-left"></i>
+                            </div>
+                            <p class="testimonial-text">
+                                "Sayuran organiknya benar-benar terasa beda. Anak-anak saya jadi doyan makan
+                                sayur karena rasanya yang lebih manis dan segar."
+                            </p>
+                            <div class="testimonial-author">
+                                <img src="https://picsum.photos/seed/tes2/80/80" alt="Siti Rahayu" class="testimonial-avatar">
+                                <div>
+                                    <h6 class="testimonial-name">Siti Rahayu</h6>
+                                    <small class="testimonial-role">Ibu Rumah Tangga</small>
+                                </div>
+                            </div>
+                            <div class="testimonial-rating">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Testimonial 3 -->
+                    <div class="swiper-slide">
+                        <div class="testimonial-card">
+                            <div class="testimonial-quote">
+                                <i class="fa-solid fa-quote-left"></i>
+                            </div>
+                            <p class="testimonial-text">
+                                "Kemitraan dengan pertanian keluarga ini sangat membantu pasar modern kami.
+                                Pasokan selalu tepat waktu dan kualitas terjaga."
+                            </p>
+                            <div class="testimonial-author">
+                                <img src="https://picsum.photos/seed/tes3/80/80" alt="Andi Pratama" class="testimonial-avatar">
+                                <div>
+                                    <h6 class="testimonial-name">Andi Pratama</h6>
+                                    <small class="testimonial-role">Manajer Pasar Segar</small>
+                                </div>
+                            </div>
+                            <div class="testimonial-rating">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star-half-stroke"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Testimonial 4 -->
+                    <div class="swiper-slide">
+                        <div class="testimonial-card">
+                            <div class="testimonial-quote">
+                                <i class="fa-solid fa-quote-left"></i>
+                            </div>
+                            <p class="testimonial-text">
+                                "Sebagai chef, saya sangat memperhatikan kualitas bahan baku. Hasil panen dari
+                                sini selalu konsisten dan rasanya luar biasa."
+                            </p>
+                            <div class="testimonial-author">
+                                <img src="https://picsum.photos/seed/tes4/80/80" alt="Dewi Lestari" class="testimonial-avatar">
+                                <div>
+                                    <h6 class="testimonial-name">Dewi Lestari</h6>
+                                    <small class="testimonial-role">Chef Profesional</small>
+                                </div>
+                            </div>
+                            <div class="testimonial-rating">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Swiper Navigation -->
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+
+                <!-- Swiper Pagination -->
+                <div class="swiper-pagination"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================
+         KONTAK SECTION
+    =========================================== -->
+    <section id="kontak" class="section-padding bg-light">
+        <div class="container">
+            <!-- Section Header -->
+            <div class="text-center mb-5" data-aos="fade-up" data-aos-duration="1000">
+                <div class="section-tag mx-auto">
+                    <i class="fa-solid fa-envelope"></i> Hubungi Kami
+                </div>
+                <h2 class="section-title">Kontak</h2>
+                <p class="section-subtitle">
+                    Jangan ragu untuk menghubungi kami. Kami siap membantu Anda!
+                </p>
+            </div>
+
+            <div class="row g-4">
+                <!-- Contact Info -->
+                <div class="col-lg-5" data-aos="fade-right" data-aos-duration="1000">
+                    <div class="contact-info-card">
+                        <h4 class="mb-4">Informasi Kontak</h4>
+
+                        <div class="contact-info-item">
+                            <div class="contact-info-icon">
+                                <i class="fa-solid fa-location-dot"></i>
+                            </div>
+                            <div>
+                                <h6>Alamat</h6>
+                                <p>Bandungrejo RT 05 RW 02, Karanganyar, Demak</p>
+                            </div>
+                        </div>
+
+                        <div class="contact-info-item">
+                            <div class="contact-info-icon">
+                                <i class="fa-brands fa-whatsapp"></i>
+                            </div>
+                            <div>
+                                <h6>WhatsApp</h6>
+                                <p>+62 812 3456 7890</p>
+                            </div>
+                        </div>
+
+                        <div class="contact-info-item">
+                            <div class="contact-info-icon">
+                                <i class="fa-solid fa-envelope"></i>
+                            </div>
+                            <div>
+                                <h6>Email</h6>
+                                <p>info@pertanian-keluarga.id</p>
+                            </div>
+                        </div>
+
+                        <div class="contact-info-item">
+                            <div class="contact-info-icon">
+                                <i class="fa-solid fa-clock"></i>
+                            </div>
+                            <div>
+                                <h6>Jam Operasional</h6>
+                                <p>Senin - Sabtu: 07.00 - 17.00 WIB</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <div class="col-lg-7" data-aos="fade-left" data-aos-duration="1000">
+                    <div class="contact-form-card">
+                        <h4 class="mb-4">Kirim Pesan</h4>
+                        <form id="contactForm" novalidate>
+                            <div class="mb-3">
+                                <label for="contactName" class="form-label">Nama Lengkap</label>
+                                <div class="input-group">
+                                    <span class="input-group-text"><i class="fa-solid fa-user"></i></span>
+                                    <input type="text" class="form-control" id="contactName" placeholder="Masukkan nama Anda" required>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="contactEmail" class="form-label">Email</label>
+                                <div class="input-group">
+                                    <span class="input-group-text"><i class="fa-solid fa-envelope"></i></span>
+                                    <input type="email" class="form-control" id="contactEmail" placeholder="Masukkan email Anda" required>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="contactMessage" class="form-label">Pesan</label>
+                                <div class="input-group">
+                                    <span class="input-group-text"><i class="fa-solid fa-comment"></i></span>
+                                    <textarea class="form-control" id="contactMessage" rows="5" placeholder="Tulis pesan Anda di sini..." required></textarea>
+                                </div>
+                            </div>
+                            <button type="submit" class="btn btn-primary-custom w-100">
+                                <i class="fa-solid fa-paper-plane me-2"></i>Kirim Pesan
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================
+         FOOTER
+    =========================================== -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="row g-4">
+                <!-- Footer About -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="footer-about">
+                        <a href="#hero" class="footer-logo">
+                            <i class="fa-solid fa-seedling"></i> Pertanian Keluarga
+                        </a>
+                        <p class="mt-3">
+                            Pertanian organik keluarga yang mengutamakan kualitas dan keberlanjutan.
+                            Hasil bumi terbaik untuk Anda dan keluarga.
+                        </p>
+                        <div class="footer-social">
+                            <a href="#" title="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                            <a href="#" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                            <a href="#" title="YouTube"><i class="fa-brands fa-youtube"></i></a>
+                            <a href="#" title="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Footer Navigation -->
+                <div class="col-lg-2 col-md-6">
+                    <div class="footer-links">
+                        <h5>Navigasi</h5>
+                        <ul>
+                            <li><a href="#hero">Home</a></li>
+                            <li><a href="#tentang">Tentang Kami</a></li>
+                            <li><a href="#tanaman">Tanaman</a></li>
+                            <li><a href="#jadwal">Jadwal Tanam</a></li>
+                            <li><a href="#panen">Hasil Panen</a></li>
+                            <li><a href="#kontak">Kontak</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Footer Tanaman -->
+                <div class="col-lg-3 col-md-6">
+                    <div class="footer-links">
+                        <h5>Tanaman</h5>
+                        <ul>
+                            <li><a href="#tanaman">Padi</a></li>
+                            <li><a href="#tanaman">Jagung</a></li>
+                            <li><a href="#tanaman">Cabai</a></li>
+                            <li><a href="#tanaman">Kangkung</a></li>
+                            <li><a href="#tanaman">Terong</a></li>
+                            <li><a href="#tanaman">Tomat</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Footer Contact -->
+                <div class="col-lg-3 col-md-6">
+                    <div class="footer-links">
+                        <h5>Kontak</h5>
+                        <ul class="footer-contact-list">
+                            <li>
+                                <i class="fa-solid fa-location-dot"></i>
+                                Bandungrejo RT 05 RW 02, Karanganyar, Demak
+                            </li>
+                            <li>
+                                <i class="fa-brands fa-whatsapp"></i>
+                                +62 812 3456 7890
+                            </li>
+                            <li>
+                                <i class="fa-solid fa-envelope"></i>
+                                info@pertanian-keluarga.id
+                            </li>
+                            <li>
+                                <i class="fa-solid fa-clock"></i>
+                                Sen-Sab: 07.00-17.00
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Footer Copyright -->
+            <div class="footer-bottom">
+                <p>&copy; 2025 Pertanian Keluarga. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ==========================================
+         BACK TO TOP BUTTON
+    =========================================== -->
+    <a href="#hero" class="back-to-top" id="backToTop" title="Kembali ke atas">
+        <i class="fa-solid fa-arrow-up"></i>
+    </a>
+
+    <!-- ==========================================
+        JAVASCRIPT LIBRARIES
+    =========================================== -->
+    <!-- Bootstrap 5 JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+
+    <!-- AOS JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+
+    <!-- SwiperJS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/11.0.5/swiper-bundle.min.js"></script>
+
+    <!-- Chart.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+
+    <!-- Lightbox2 -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.5/js/lightbox.min.js"></script>
+
+    <!-- Custom JS -->
+    <script src="js/script.js"></script>
+</body>
+</html>
