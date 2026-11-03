@@ -9,6 +9,9 @@ A modern and responsive agriculture website built using **HTML5, CSS3, and JavaS
 
 ---
 
+<details>
+<summary><strong>📖 Dokumen Lengkap</strong> — About, Fitur, Cara Menjalankan, & lainnya</summary>
+
 ## 📖 About
 
 Farm Family is a company profile website designed to introduce a family-owned farming business. The website presents information about crops, farming activities, harvest data, articles, testimonials, and contact information with a modern and responsive design.
@@ -133,3 +136,5 @@ assets/images/preview-gallery.png
 ## 📄 License
 
 This project is created for educational and portfolio purposes.
+
+</details>
