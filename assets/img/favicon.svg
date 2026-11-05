@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Pertanian Keluarga">
+  <rect width="64" height="64" rx="14" fill="#2E7D32"/>
+  <path d="M47 15c0 15-10.5 25.5-25.5 25.5C21.5 25.5 32 15 47 15Z" fill="#A5D6A7"/>
+  <path d="M19 46c6.5-11 13.5-18 24-22" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" fill="none"/>
+</svg>

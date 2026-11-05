@@ -2,6 +2,7 @@
    CSS VARIABLES & ROOT
 =========================================== */
 :root {
+    color-scheme: light;
     --primary: #2E7D32;
     --primary-dark: #1B5E20;
     --primary-light: #4CAF50;
@@ -9,6 +10,7 @@
     --secondary-light: #A1887F;
     --accent: #FFA726;
     --white: #FFFFFF;
+    --surface: #FFFFFF;
     --off-white: #F5F5F5;
     --bg-light: #FAFAFA;
     --text-dark: #212121;
@@ -23,12 +25,14 @@
 
 /* Dark Mode Variables */
 [data-theme="dark"] {
+    color-scheme: dark;
     --primary: #4CAF50;
     --primary-dark: #388E3C;
     --primary-light: #66BB6A;
     --secondary: #A1887F;
     --secondary-light: #BCAAA4;
-    --white: #1A1A2E;
+    --white: #FFFFFF;
+    --surface: #1A1A2E;
     --off-white: #16213E;
     --bg-light: #0F3460;
     --text-dark: #E8E8E8;
@@ -55,7 +59,7 @@ html {
 body {
     font-family: 'Poppins', sans-serif;
     color: var(--text-dark);
-    background-color: var(--white);
+    background-color: var(--surface);
     line-height: 1.7;
     overflow-x: hidden;
     transition: background-color 0.3s ease, color 0.3s ease;
@@ -80,74 +84,6 @@ a:hover {
 img {
     max-width: 100%;
     height: auto;
-}
-
-/* ==========================================
-   LOADING SCREEN
-=========================================== */
-.loading-screen {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(135deg, #1B5E20, #2E7D32);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 99999;
-    transition: opacity 0.6s ease, visibility 0.6s ease;
-}
-
-.loading-screen.hidden {
-    opacity: 0;
-    visibility: hidden;
-}
-
-.loader {
-    text-align: center;
-}
-
-.loader-icon {
-    font-size: 3rem;
-    color: var(--white);
-    animation: loaderSpin 1.5s ease-in-out infinite;
-    margin-bottom: 1rem;
-}
-
-@keyframes loaderSpin {
-    0%, 100% { transform: rotate(0deg) scale(1); }
-    50% { transform: rotate(180deg) scale(1.2); }
-}
-
-.loader-text {
-    color: var(--white);
-    font-size: 1.5rem;
-    font-weight: 600;
-    margin-bottom: 1.5rem;
-    letter-spacing: 2px;
-}
-
-.loader-bar {
-    width: 200px;
-    height: 4px;
-    background: rgba(255,255,255,0.2);
-    border-radius: 10px;
-    overflow: hidden;
-    margin: 0 auto;
-}
-
-.loader-bar-fill {
-    width: 0;
-    height: 100%;
-    background: var(--white);
-    border-radius: 10px;
-    animation: loaderFill 1.5s ease-in-out forwards;
-}
-
-@keyframes loaderFill {
-    0% { width: 0; }
-    100% { width: 100%; }
 }
 
 /* ==========================================
@@ -280,7 +216,8 @@ img {
 .hero-section {
     height: 100vh;
     min-height: 600px;
-    background: url('https://banyuwangikab.go.id/media/berita/original/ntmvebrzwv_whatsapp-image-2024-06-04-at-134040.jpeg') center/cover no-repeat;
+    background: url('../assets/img/hero.jpg') center/cover no-repeat;
+    background-color: #1B5E20;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -368,7 +305,7 @@ img {
 }
 
 .btn-outline-custom:hover {
-    background: var(--white);
+    background: var(--surface);
     color: var(--primary);
     border-color: var(--white);
     transform: translateY(-3px);
@@ -407,7 +344,7 @@ img {
 .wheel {
     width: 4px;
     height: 8px;
-    background: var(--white);
+    background: var(--surface);
     border-radius: 2px;
     position: absolute;
     top: 6px;
@@ -536,7 +473,7 @@ img {
    PLANT CARDS
 =========================================== */
 .plant-card {
-    background: var(--white);
+    background: var(--surface);
     border-radius: var(--radius-lg);
     overflow: hidden;
     box-shadow: var(--shadow);
@@ -666,7 +603,7 @@ img {
    STAT CARDS
 =========================================== */
 .stat-card {
-    background: var(--white);
+    background: var(--surface);
     border-radius: var(--radius-lg);
     padding: 30px;
     text-align: center;
@@ -722,7 +659,7 @@ img {
    CHART WRAPPER
 =========================================== */
 .chart-wrapper {
-    background: var(--white);
+    background: var(--surface);
     border-radius: var(--radius-lg);
     padding: 30px;
     box-shadow: var(--shadow);
@@ -781,7 +718,7 @@ img {
 }
 
 .gallery-caption {
-    background: var(--white);
+    background: var(--surface);
     padding: 12px 15px;
     font-size: 0.85rem;
     color: var(--text-muted);
@@ -799,7 +736,7 @@ img {
    ARTICLE CARDS
 =========================================== */
 .article-card {
-    background: var(--white);
+    background: var(--surface);
     border-radius: var(--radius-lg);
     overflow: hidden;
     box-shadow: var(--shadow);
@@ -893,7 +830,7 @@ img {
 }
 
 .testimonial-card {
-    background: var(--white);
+    background: var(--surface);
     border-radius: var(--radius-lg);
     padding: 30px;
     box-shadow: var(--shadow);
@@ -958,7 +895,7 @@ img {
     color: var(--primary);
     width: 45px;
     height: 45px;
-    background: var(--white);
+    background: var(--surface);
     border-radius: 50%;
     box-shadow: 0 3px 15px rgba(0,0,0,0.1);
 }
@@ -1023,7 +960,7 @@ img {
 }
 
 .contact-form-card {
-    background: var(--white);
+    background: var(--surface);
     border-radius: var(--radius-lg);
     padding: 40px;
     box-shadow: var(--shadow);
@@ -1368,6 +1305,166 @@ img {
 
 [data-theme="dark"] .hero-section {
     filter: brightness(0.8);
+}
+
+/* ==========================================
+   ACCESSIBILITY & PERFORMANCE
+=========================================== */
+.skip-link {
+    position: absolute;
+    top: -100px;
+    left: 16px;
+    z-index: 100000;
+    background: var(--primary);
+    color: #FFFFFF;
+    padding: 12px 20px;
+    border-radius: 0 0 10px 10px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: top 0.2s ease;
+}
+
+.skip-link:focus {
+    top: 0;
+    color: #FFFFFF;
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+.navbar-toggler:focus-visible {
+    outline: 3px solid var(--accent);
+    outline-offset: 3px;
+}
+
+.form-hint {
+    font-size: 0.82rem;
+    color: var(--text-muted);
+    margin: 12px 0 0;
+    text-align: center;
+}
+
+.form-status {
+    display: none;
+    margin-top: 14px;
+    padding: 12px 16px;
+    border-radius: 10px;
+    font-size: 0.9rem;
+}
+
+.form-status.show {
+    display: block;
+}
+
+.form-status.success {
+    background: rgba(46, 125, 50, 0.12);
+    color: var(--primary-dark);
+    border: 1px solid rgba(46, 125, 50, 0.25);
+}
+
+.form-status.error {
+    background: rgba(211, 47, 47, 0.1);
+    color: #C62828;
+    border: 1px solid rgba(211, 47, 47, 0.25);
+}
+
+[data-theme="dark"] .form-status.success {
+    color: #A5D6A7;
+}
+
+[data-theme="dark"] .form-status.error {
+    color: #EF9A9A;
+}
+
+.footer-contact-list a,
+.contact-info-item a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.footer-contact-list a:hover {
+    color: var(--primary-light);
+}
+
+.contact-info-item a:hover {
+    color: var(--primary);
+}
+
+section[id] {
+    scroll-margin-top: 80px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.001ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.001ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+/* ==========================================
+   WHATSAPP FLOATING BUTTON
+=========================================== */
+.wa-float {
+    position: fixed;
+    bottom: 90px;
+    right: 30px;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: #25D366;
+    color: #FFFFFF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.7rem;
+    text-decoration: none;
+    box-shadow: 0 8px 25px rgba(37, 211, 102, 0.45);
+    z-index: 999;
+    transition: var(--transition);
+}
+
+.wa-float:hover {
+    background: #1EBE5A;
+    color: #FFFFFF;
+    transform: translateY(-4px) scale(1.05);
+}
+
+.wa-float::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    border: 2px solid rgba(37, 211, 102, 0.6);
+    animation: waPulse 2.2s ease-out infinite;
+}
+
+@keyframes waPulse {
+    0% { transform: scale(1); opacity: 0.8; }
+    100% { transform: scale(1.45); opacity: 0; }
+}
+
+@media (max-width: 575.98px) {
+    .wa-float {
+        bottom: 80px;
+        right: 20px;
+        width: 50px;
+        height: 50px;
+        font-size: 1.5rem;
+    }
+
+    .back-to-top {
+        right: 20px;
+        bottom: 20px;
+    }
 }
 
 /* ==========================================

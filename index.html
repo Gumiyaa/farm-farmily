@@ -3,17 +3,47 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pertanian Keluarga - Hasil Bumi Terbaik</title>
-    <meta name="description" content="Pertanian keluarga yang mengelola sawah secara turun-temurun dengan metode alami dan organik.">
+    <title>Pertanian Keluarga - Hasil Bumi Terbaik dari Sawah Organik</title>
+    <meta name="description" content="Pertanian keluarga di Demak yang mengelola sawah secara turun-temurun dengan metode alami dan organik. Menyediakan padi, jagung, cabai, dan sayuran segar.">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#2E7D32">
+    <link rel="canonical" href="https://pertanian-keluarga.id/">
+
+    <!-- Open Graph / WhatsApp / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="id_ID">
+    <meta property="og:site_name" content="Pertanian Keluarga">
+    <meta property="og:title" content="Pertanian Keluarga - Hasil Bumi Terbaik dari Sawah Organik">
+    <meta property="og:description" content="Hasil pertanian organik terbaik langsung dari sawah keluarga kami ke meja makan Anda.">
+    <meta property="og:url" content="https://pertanian-keluarga.id/">
+    <meta property="og:image" content="https://pertanian-keluarga.id/assets/img/og-image.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Sawah keluarga Pertanian Keluarga">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Pertanian Keluarga - Hasil Bumi Terbaik dari Sawah Organik">
+    <meta name="twitter:description" content="Hasil pertanian organik terbaik langsung dari sawah keluarga kami ke meja makan Anda.">
+    <meta name="twitter:image" content="https://pertanian-keluarga.id/assets/img/og-image.jpg">
+
+    <!-- Icons -->
+    <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+    <link rel="icon" href="assets/img/favicon-32.png" sizes="32x32" type="image/png">
+    <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+
+    <!-- Resource hints -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
+    <link rel="preload" as="image" href="assets/img/hero.jpg" fetchpriority="high">
 
     <!-- Google Fonts: Poppins -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
     <!-- Bootstrap 5 CSS -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Bootstrap Icons -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
 
     <!-- Font Awesome -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
@@ -29,23 +59,50 @@
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/style.css">
+
+    <!-- Tema awal: cegah flash putih untuk pengguna dark mode -->
+    <script>
+        (function () {
+            try {
+                var saved = localStorage.getItem('theme');
+                var dark = saved === 'dark' || (!saved && window.matchMedia('(prefers-color-scheme: dark)').matches);
+                if (dark) document.documentElement.setAttribute('data-theme', 'dark');
+            } catch (e) { }
+        })();
+    </script>
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "@id": "https://pertanian-keluarga.id/#business",
+      "name": "Pertanian Keluarga",
+      "description": "Pertanian keluarga yang mengelola sawah secara turun-temurun dengan metode alami dan organik.",
+      "url": "https://pertanian-keluarga.id/",
+      "image": "https://pertanian-keluarga.id/assets/img/og-image.jpg",
+      "telephone": "+6281234567890",
+      "email": "info@pertanian-keluarga.id",
+      "priceRange": "Rp",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Bandungrejo RT 05 RW 02",
+        "addressLocality": "Karanganyar",
+        "addressRegion": "Demak",
+        "addressCountry": "ID"
+      },
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+        "opens": "07:00",
+        "closes": "17:00"
+      }
+    }
+    </script>
 </head>
 <body data-bs-spy="scroll" data-bs-target="#mainNav" data-bs-offset="80">
 
-    <!-- ==========================================
-         LOADING SCREEN
-    =========================================== -->
-    <div id="loadingScreen" class="loading-screen">
-        <div class="loader">
-            <div class="loader-icon">
-                <i class="fa-solid fa-leaf"></i>
-            </div>
-            <div class="loader-text">Pertanian Keluarga</div>
-            <div class="loader-bar">
-                <div class="loader-bar-fill"></div>
-            </div>
-        </div>
-    </div>
+    <a class="skip-link" href="#hero">Langsung ke konten utama</a>
 
     <!-- ==========================================
          SCROLL PROGRESS BAR
@@ -55,16 +112,16 @@
     <!-- ==========================================
          NAVBAR
     =========================================== -->
-    <nav class="navbar navbar-expand-lg fixed-top" id="mainNav">
+    <nav class="navbar navbar-expand-lg fixed-top" id="mainNav" aria-label="Navigasi utama">
         <div class="container">
             <!-- Logo -->
             <a class="navbar-brand" href="#hero">
-                <i class="fa-solid fa-seedling"></i> Pertanian Keluarga
+                <i class="fa-solid fa-seedling" aria-hidden="true"></i> Pertanian Keluarga
             </a>
 
             <!-- Mobile Toggle -->
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent"
-                aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+                aria-controls="navbarContent" aria-expanded="false" aria-label="Buka menu navigasi">
                 <span class="navbar-toggler-icon"></span>
             </button>
 
@@ -83,8 +140,9 @@
                 </ul>
 
                 <!-- Dark Mode Toggle -->
-                <button class="dark-mode-btn ms-3" id="darkModeToggle" title="Toggle Dark Mode">
-                    <i class="fa-solid fa-moon"></i>
+                <button class="dark-mode-btn ms-3" id="darkModeToggle" type="button"
+                    aria-label="Aktifkan mode gelap" aria-pressed="false" title="Mode gelap">
+                    <i class="fa-solid fa-moon" aria-hidden="true"></i>
                 </button>
             </div>
         </div>
@@ -135,7 +193,7 @@
                 <!-- Gambar Petani -->
                 <div class="col-lg-6 mb-5 mb-lg-0" data-aos="fade-right" data-aos-duration="1000">
                     <div class="tentang-image-wrapper">
-                        <img src="https://gkmdblog.s3.ap-southeast-1.amazonaws.com/wp-content/uploads/2024/01/29171438/Blog-banner-_-Pahami-Dengan-Mudah-Jenis-jenis-Sawah-di-Indonesia-.jpg" alt="Petani Keluarga"
+                        <img src="assets/img/tentang.jpg" width="1200" height="902" loading="lazy" decoding="async" alt="Petani Keluarga"
                             class="img-fluid rounded-4 shadow-lg">
                         <div class="tentang-badge" data-aos="zoom-in" data-aos-delay="300">
                             <span class="badge-number">25+</span>
@@ -226,9 +284,9 @@
                 <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="0" data-aos-duration="800">
                     <div class="plant-card">
                         <div class="plant-card-img">
-                            <img src="https://diperpa.badungkab.go.id/storage/olds/diperpa/Varietas-Unggul-Baru-Padi-Untuk-Lahan-Sawah-Tadah-Hujan_187730.jpg" alt="Padi">
+                            <img src="assets/img/padi.jpg" width="750" height="480" loading="lazy" decoding="async" alt="Padi">
                             <div class="plant-card-overlay">
-                                <a href="https://diperpa.badungkab.go.id/storage/olds/diperpa/Varietas-Unggul-Baru-Padi-Untuk-Lahan-Sawah-Tadah-Hujan_187730.jpg" data-lightbox="tanaman" data-title="Padi" class="btn btn-light btn-sm">
+                                <a href="assets/img/padi.jpg" data-lightbox="tanaman" data-title="Padi" aria-label="Perbesar foto Padi" class="btn btn-light btn-sm">
                                     <i class="fa-solid fa-expand"></i>
                                 </a>
                             </div>
@@ -248,9 +306,9 @@
                 <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100" data-aos-duration="800">
                     <div class="plant-card">
                         <div class="plant-card-img">
-                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQcvF-A4FjDM6KvKSiGH0Slr4nmFOJbR4Uh4atkCvvQGjS-_-Nan_CYDJhv&s=10" alt="Jagung">
+                            <img src="assets/img/jagung.jpg" width="592" height="337" loading="lazy" decoding="async" alt="Jagung">
                             <div class="plant-card-overlay">
-                                <a href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQcvF-A4FjDM6KvKSiGH0Slr4nmFOJbR4Uh4atkCvvQGjS-_-Nan_CYDJhv&s=10" data-lightbox="tanaman" data-title="Jagung" class="btn btn-light btn-sm">
+                                <a href="assets/img/jagung.jpg" data-lightbox="tanaman" data-title="Jagung" aria-label="Perbesar foto Jagung" class="btn btn-light btn-sm">
                                     <i class="fa-solid fa-expand"></i>
                                 </a>
                             </div>
@@ -270,9 +328,9 @@
                 <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200" data-aos-duration="800">
                     <div class="plant-card">
                         <div class="plant-card-img">
-                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRSWqoJxcXnREZ8ZuI23YNjoeTUhamtOonPuv5GkdCa6fA_u_32bqD4mHs&s=10" alt="Cabai">
+                            <img src="assets/img/cabai.jpg" width="739" height="415" loading="lazy" decoding="async" alt="Cabai">
                             <div class="plant-card-overlay">
-                                <a href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRSWqoJxcXnREZ8ZuI23YNjoeTUhamtOonPuv5GkdCa6fA_u_32bqD4mHs&s=10" data-lightbox="tanaman" data-title="Cabai" class="btn btn-light btn-sm">
+                                <a href="assets/img/cabai.jpg" data-lightbox="tanaman" data-title="Cabai" aria-label="Perbesar foto Cabai" class="btn btn-light btn-sm">
                                     <i class="fa-solid fa-expand"></i>
                                 </a>
                             </div>
@@ -292,9 +350,9 @@
                 <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="0" data-aos-duration="800">
                     <div class="plant-card">
                         <div class="plant-card-img">
-                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTNT2Am_OGBkBsSa0g3llmvDfywsxYa0rRsClhzNeWYc0P9YDGgEESvr-5Q&s=10" alt="Kangkung">
+                            <img src="assets/img/kangkung.jpg" width="585" height="341" loading="lazy" decoding="async" alt="Kangkung">
                             <div class="plant-card-overlay">
-                                <a href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTNT2Am_OGBkBsSa0g3llmvDfywsxYa0rRsClhzNeWYc0P9YDGgEESvr-5Q&s=10" data-lightbox="tanaman" data-title="Kangkung" class="btn btn-light btn-sm">
+                                <a href="assets/img/kangkung.jpg" data-lightbox="tanaman" data-title="Kangkung" aria-label="Perbesar foto Kangkung" class="btn btn-light btn-sm">
                                     <i class="fa-solid fa-expand"></i>
                                 </a>
                             </div>
@@ -314,9 +372,9 @@
                 <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100" data-aos-duration="800">
                     <div class="plant-card">
                         <div class="plant-card-img">
-                            <img src="https://desapulutan.gunungkidulkab.go.id/assets/files/artikel/sedang_1523929413cara-menanam-terong.jpg" alt="Terong">
+                            <img src="assets/img/terong.jpg" width="562" height="1000" loading="lazy" decoding="async" alt="Terong">
                             <div class="plant-card-overlay">
-                                <a href="https://desapulutan.gunungkidulkab.go.id/assets/files/artikel/sedang_1523929413cara-menanam-terong.jpg" data-lightbox="tanaman" data-title="Terong" class="btn btn-light btn-sm">
+                                <a href="assets/img/terong.jpg" data-lightbox="tanaman" data-title="Terong" aria-label="Perbesar foto Terong" class="btn btn-light btn-sm">
                                     <i class="fa-solid fa-expand"></i>
                                 </a>
                             </div>
@@ -336,9 +394,9 @@
                 <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200" data-aos-duration="800">
                     <div class="plant-card">
                         <div class="plant-card-img">
-                            <img src="https://imgx.sonora.id/crop/0x0:0x0/x/photo/2023/04/26/63cf285552dcfjpg-20230426085134.jpg" alt="Tomat">
+                            <img src="assets/img/tomat.jpg" width="750" height="500" loading="lazy" decoding="async" alt="Tomat">
                             <div class="plant-card-overlay">
-                                <a href="https://imgx.sonora.id/crop/0x0:0x0/x/photo/2023/04/26/63cf285552dcfjpg-20230426085134.jpg" data-lightbox="tanaman" data-title="Tomat" class="btn btn-light btn-sm">
+                                <a href="assets/img/tomat.jpg" data-lightbox="tanaman" data-title="Tomat" aria-label="Perbesar foto Tomat" class="btn btn-light btn-sm">
                                     <i class="fa-solid fa-expand"></i>
                                 </a>
                             </div>
@@ -485,7 +543,7 @@
                 <div class="col-lg-3 col-md-6" data-aos="zoom-in" data-aos-delay="200">
                     <div class="stat-card">
                         <div class="stat-icon"><i class="fa-solid fa-weight-hanging"></i></div>
-                        <h3 class="stat-number" data-target="13">0</h3>
+                        <h3 class="stat-number" data-target="13.5">0</h3>
                         <p class="stat-label">Total Panen (Ton)</p>
                     </div>
                 </div>
@@ -529,8 +587,8 @@
             <div class="row g-3 gallery-grid">
                 <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="0">
                     <div class="gallery-item">
-                        <a href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSRj3yOwZ73jLJsHvJGqlqDbzJSHs4ntRJKdfuAS-YHyGeF45M69D2u3zo&s=10" data-lightbox="galeri" data-title="Persiapan Lahan">
-                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSRj3yOwZ73jLJsHvJGqlqDbzJSHs4ntRJKdfuAS-YHyGeF45M69D2u3zo&s=10" alt="Persiapan Lahan" class="img-fluid">
+                        <a href="assets/img/galeri-lahan.jpg" data-lightbox="galeri" data-title="Persiapan Lahan" aria-label="Perbesar foto Persiapan Lahan">
+                            <img src="assets/img/galeri-lahan.jpg" width="700" height="438" loading="lazy" decoding="async" alt="Persiapan Lahan" class="img-fluid">
                             <div class="gallery-overlay">
                                 <i class="fa-solid fa-expand"></i>
                             </div>
@@ -540,8 +598,8 @@
                 </div>
                 <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
                     <div class="gallery-item">
-                        <a href="https://i.pinimg.com/originals/92/dc/a9/92dca99c956ae42d732d7acc92d562e6.jpg" data-lightbox="galeri" data-title="Menanam Bibit">
-                            <img src="https://i.pinimg.com/originals/92/dc/a9/92dca99c956ae42d732d7acc92d562e6.jpg" alt="Menanam Bibit" class="img-fluid">
+                        <a href="assets/img/galeri-bibit.jpg" data-lightbox="galeri" data-title="Menanam Bibit" aria-label="Perbesar foto Menanam Bibit">
+                            <img src="assets/img/galeri-bibit.jpg" width="1400" height="927" loading="lazy" decoding="async" alt="Menanam Bibit" class="img-fluid">
                             <div class="gallery-overlay">
                                 <i class="fa-solid fa-expand"></i>
                             </div>
@@ -551,8 +609,8 @@
                 </div>
                 <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
                     <div class="gallery-item">
-                        <a href="https://img.antarafoto.com/cache/1200x800/2024/02/22/penyemprotan-pestisida-tanaman-padi-di-jombang-1ab7f-dom.jpg" data-lightbox="galeri" data-title="Perawatan Tanaman">
-                            <img src="https://img.antarafoto.com/cache/1200x800/2024/02/22/penyemprotan-pestisida-tanaman-padi-di-jombang-1ab7f-dom.jpg" alt="Perawatan Tanaman" class="img-fluid">
+                        <a href="assets/img/galeri-perawatan.jpg" data-lightbox="galeri" data-title="Perawatan Tanaman" aria-label="Perbesar foto Perawatan Tanaman">
+                            <img src="assets/img/galeri-perawatan.jpg" width="1200" height="800" loading="lazy" decoding="async" alt="Perawatan Tanaman" class="img-fluid">
                             <div class="gallery-overlay">
                                 <i class="fa-solid fa-expand"></i>
                             </div>
@@ -562,8 +620,8 @@
                 </div>
                 <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="0">
                     <div class="gallery-item">
-                        <a href="https://cdn.antaranews.com/cache/1200x800/2019/01/PANEN.jpg" data-lightbox="galeri" data-title="Panen Raya">
-                            <img src="https://cdn.antaranews.com/cache/1200x800/2019/01/PANEN.jpg" alt="Panen Raya" class="img-fluid">
+                        <a href="assets/img/galeri-panen.jpg" data-lightbox="galeri" data-title="Panen Raya" aria-label="Perbesar foto Panen Raya">
+                            <img src="assets/img/galeri-panen.jpg" width="1200" height="800" loading="lazy" decoding="async" alt="Panen Raya" class="img-fluid">
                             <div class="gallery-overlay">
                                 <i class="fa-solid fa-expand"></i>
                             </div>
@@ -573,8 +631,8 @@
                 </div>
                 <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
                     <div class="gallery-item">
-                        <a href="https://www.jombangkab.go.id/storage/gambar/upload_2b3e10722eb19b25260901db77b6eb59.jpeg" data-lightbox="galeri" data-title="Pengolahan Tanah">
-                            <img src="https://www.jombangkab.go.id/storage/gambar/upload_2b3e10722eb19b25260901db77b6eb59.jpeg" alt="Pengolahan Tanah" class="img-fluid">
+                        <a href="assets/img/galeri-pengolahan.jpg" data-lightbox="galeri" data-title="Pengolahan Tanah" aria-label="Perbesar foto Pengolahan Tanah">
+                            <img src="assets/img/galeri-pengolahan.jpg" width="1000" height="782" loading="lazy" decoding="async" alt="Pengolahan Tanah" class="img-fluid">
                             <div class="gallery-overlay">
                                 <i class="fa-solid fa-expand"></i>
                             </div>
@@ -584,8 +642,8 @@
                 </div>
                 <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
                     <div class="gallery-item">
-                        <a href="https://i.cdn.newsbytesapp.com/ind/images/l80520251120134533.jpeg" data-lightbox="galeri" data-title="Hasil Panen Segar">
-                            <img src="https://i.cdn.newsbytesapp.com/ind/images/l80520251120134533.jpeg" alt="Hasil Panen" class="img-fluid">
+                        <a href="assets/img/galeri-hasil.webp" data-lightbox="galeri" data-title="Hasil Panen Segar" aria-label="Perbesar foto Hasil Panen Segar">
+                            <img src="assets/img/galeri-hasil.webp" width="1920" height="1080" loading="lazy" decoding="async" alt="Hasil Panen" class="img-fluid">
                             <div class="gallery-overlay">
                                 <i class="fa-solid fa-expand"></i>
                             </div>
@@ -619,7 +677,7 @@
                 <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="0" data-aos-duration="800">
                     <div class="article-card">
                         <div class="article-img">
-                            <img src="https://cnc-magazine.oramiland.com/parenting/images/cara_menanam_padi.width-800.format-webp.webp" alt="Cara Menanam Padi" class="img-fluid">
+                            <img src="assets/img/artikel-padi.webp" width="800" height="449" loading="lazy" decoding="async" alt="Cara Menanam Padi" class="img-fluid">
                             <span class="article-date"><i class="fa-regular fa-calendar"></i> 15 Jan 2025</span>
                         </div>
                         <div class="article-body">
@@ -635,7 +693,7 @@
                 <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100" data-aos-duration="800">
                     <div class="article-card">
                         <div class="article-img">
-                            <img src="https://www.kampustani.com/wp-content/uploads/2018/11/Mengatasi-Hama-Wereng-Secara-Alami.jpg" alt="Mengatasi Hama" class="img-fluid">
+                            <img src="assets/img/artikel-hama.jpg" width="1000" height="754" loading="lazy" decoding="async" alt="Mengatasi Hama" class="img-fluid">
                             <span class="article-date"><i class="fa-regular fa-calendar"></i> 28 Feb 2025</span>
                         </div>
                         <div class="article-body">
@@ -651,7 +709,7 @@
                 <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200" data-aos-duration="800">
                     <div class="article-card">
                         <div class="article-img">
-                            <img src="https://gdm.id/wp-content/uploads/2026/02/Benih-padi-unggul.webp" alt="Memilih Bibit" class="img-fluid">
+                            <img src="assets/img/artikel-bibit.webp" width="1200" height="801" loading="lazy" decoding="async" alt="Memilih Bibit" class="img-fluid">
                             <span class="article-date"><i class="fa-regular fa-calendar"></i> 10 Mar 2025</span>
                         </div>
                         <div class="article-body">
@@ -696,7 +754,7 @@
                                 kami berlangganan untuk kebutuhan restoran kami."
                             </p>
                             <div class="testimonial-author">
-                                <img src="https://picsum.photos/seed/tes1/80/80" alt="Budi Santoso" class="testimonial-avatar">
+                                <img src="assets/img/avatar-bs.svg" width="50" height="50" loading="eager" decoding="async" alt="Budi Santoso" class="testimonial-avatar">
                                 <div>
                                     <h6 class="testimonial-name">Budi Santoso</h6>
                                     <small class="testimonial-role">Pemilik Restoran Hijau</small>
@@ -723,7 +781,7 @@
                                 sayur karena rasanya yang lebih manis dan segar."
                             </p>
                             <div class="testimonial-author">
-                                <img src="https://picsum.photos/seed/tes2/80/80" alt="Siti Rahayu" class="testimonial-avatar">
+                                <img src="assets/img/avatar-sr.svg" width="50" height="50" loading="eager" decoding="async" alt="Siti Rahayu" class="testimonial-avatar">
                                 <div>
                                     <h6 class="testimonial-name">Siti Rahayu</h6>
                                     <small class="testimonial-role">Ibu Rumah Tangga</small>
@@ -750,7 +808,7 @@
                                 Pasokan selalu tepat waktu dan kualitas terjaga."
                             </p>
                             <div class="testimonial-author">
-                                <img src="https://picsum.photos/seed/tes3/80/80" alt="Andi Pratama" class="testimonial-avatar">
+                                <img src="assets/img/avatar-ap.svg" width="50" height="50" loading="eager" decoding="async" alt="Andi Pratama" class="testimonial-avatar">
                                 <div>
                                     <h6 class="testimonial-name">Andi Pratama</h6>
                                     <small class="testimonial-role">Manajer Pasar Segar</small>
@@ -777,7 +835,7 @@
                                 sini selalu konsisten dan rasanya luar biasa."
                             </p>
                             <div class="testimonial-author">
-                                <img src="https://picsum.photos/seed/tes4/80/80" alt="Dewi Lestari" class="testimonial-avatar">
+                                <img src="assets/img/avatar-dl.svg" width="50" height="50" loading="eager" decoding="async" alt="Dewi Lestari" class="testimonial-avatar">
                                 <div>
                                     <h6 class="testimonial-name">Dewi Lestari</h6>
                                     <small class="testimonial-role">Chef Profesional</small>
@@ -842,7 +900,7 @@
                             </div>
                             <div>
                                 <h6>WhatsApp</h6>
-                                <p>+62 812 3456 7890</p>
+                                <p><a href="https://wa.me/6281234567890" target="_blank" rel="noopener">+62 812 3456 7890</a></p>
                             </div>
                         </div>
 
@@ -852,7 +910,7 @@
                             </div>
                             <div>
                                 <h6>Email</h6>
-                                <p>info@pertanian-keluarga.id</p>
+                                <p><a href="mailto:info@pertanian-keluarga.id">info@pertanian-keluarga.id</a></p>
                             </div>
                         </div>
 
@@ -872,31 +930,36 @@
                 <div class="col-lg-7" data-aos="fade-left" data-aos-duration="1000">
                     <div class="contact-form-card">
                         <h4 class="mb-4">Kirim Pesan</h4>
-                        <form id="contactForm" novalidate>
+                        <form id="contactForm" data-whatsapp="6281234567890" novalidate>
                             <div class="mb-3">
                                 <label for="contactName" class="form-label">Nama Lengkap</label>
                                 <div class="input-group">
-                                    <span class="input-group-text"><i class="fa-solid fa-user"></i></span>
-                                    <input type="text" class="form-control" id="contactName" placeholder="Masukkan nama Anda" required>
+                                    <span class="input-group-text"><i class="fa-solid fa-user" aria-hidden="true"></i></span>
+                                    <input type="text" class="form-control" id="contactName" name="name"
+                                        placeholder="Masukkan nama Anda" autocomplete="name" required>
                                 </div>
                             </div>
                             <div class="mb-3">
                                 <label for="contactEmail" class="form-label">Email</label>
                                 <div class="input-group">
-                                    <span class="input-group-text"><i class="fa-solid fa-envelope"></i></span>
-                                    <input type="email" class="form-control" id="contactEmail" placeholder="Masukkan email Anda" required>
+                                    <span class="input-group-text"><i class="fa-solid fa-envelope" aria-hidden="true"></i></span>
+                                    <input type="email" class="form-control" id="contactEmail" name="email"
+                                        placeholder="Masukkan email Anda" autocomplete="email" required>
                                 </div>
                             </div>
                             <div class="mb-3">
                                 <label for="contactMessage" class="form-label">Pesan</label>
                                 <div class="input-group">
-                                    <span class="input-group-text"><i class="fa-solid fa-comment"></i></span>
-                                    <textarea class="form-control" id="contactMessage" rows="5" placeholder="Tulis pesan Anda di sini..." required></textarea>
+                                    <span class="input-group-text"><i class="fa-solid fa-comment" aria-hidden="true"></i></span>
+                                    <textarea class="form-control" id="contactMessage" name="message" rows="5"
+                                        placeholder="Tulis pesan Anda di sini..." required></textarea>
                                 </div>
                             </div>
                             <button type="submit" class="btn btn-primary-custom w-100">
-                                <i class="fa-solid fa-paper-plane me-2"></i>Kirim Pesan
+                                <i class="fa-brands fa-whatsapp me-2" aria-hidden="true"></i>Kirim via WhatsApp
                             </button>
+                            <p class="form-hint">Pesan akan dibuka di WhatsApp untuk dikirim ke tim kami.</p>
+                            <div id="formStatus" class="form-status" role="status" aria-live="polite"></div>
                         </form>
                     </div>
                 </div>
@@ -921,10 +984,10 @@
                             Hasil bumi terbaik untuk Anda dan keluarga.
                         </p>
                         <div class="footer-social">
-                            <a href="#" title="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
-                            <a href="#" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
-                            <a href="#" title="YouTube"><i class="fa-brands fa-youtube"></i></a>
-                            <a href="#" title="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+                            <a href="#" aria-label="Facebook Pertanian Keluarga"><i class="fa-brands fa-facebook-f" aria-hidden="true"></i></a>
+                            <a href="#" aria-label="Instagram Pertanian Keluarga"><i class="fa-brands fa-instagram" aria-hidden="true"></i></a>
+                            <a href="#" aria-label="YouTube Pertanian Keluarga"><i class="fa-brands fa-youtube" aria-hidden="true"></i></a>
+                            <a href="#" aria-label="TikTok Pertanian Keluarga"><i class="fa-brands fa-tiktok" aria-hidden="true"></i></a>
                         </div>
                     </div>
                 </div>
@@ -969,15 +1032,15 @@
                                 Bandungrejo RT 05 RW 02, Karanganyar, Demak
                             </li>
                             <li>
-                                <i class="fa-brands fa-whatsapp"></i>
-                                +62 812 3456 7890
+                                <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
+                                <a href="https://wa.me/6281234567890" target="_blank" rel="noopener">+62 812 3456 7890</a>
                             </li>
                             <li>
-                                <i class="fa-solid fa-envelope"></i>
-                                info@pertanian-keluarga.id
+                                <i class="fa-solid fa-envelope" aria-hidden="true"></i>
+                                <a href="mailto:info@pertanian-keluarga.id">info@pertanian-keluarga.id</a>
                             </li>
                             <li>
-                                <i class="fa-solid fa-clock"></i>
+                                <i class="fa-solid fa-clock" aria-hidden="true"></i>
                                 Sen-Sab: 07.00-17.00
                             </li>
                         </ul>
@@ -987,38 +1050,46 @@
 
             <!-- Footer Copyright -->
             <div class="footer-bottom">
-                <p>&copy; 2025 Pertanian Keluarga. All Rights Reserved.</p>
+                <p>&copy; <span id="currentYear">2025</span> Pertanian Keluarga. All Rights Reserved.</p>
             </div>
         </div>
     </footer>
 
     <!-- ==========================================
+         WHATSAPP FLOATING BUTTON
+    =========================================== -->
+    <a href="https://wa.me/6281234567890?text=Halo%20Pertanian%20Keluarga%2C%20saya%20ingin%20bertanya%20tentang%20hasil%20panen."
+        class="wa-float" target="_blank" rel="noopener" aria-label="Chat via WhatsApp">
+        <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
+    </a>
+
+    <!-- ==========================================
          BACK TO TOP BUTTON
     =========================================== -->
-    <a href="#hero" class="back-to-top" id="backToTop" title="Kembali ke atas">
-        <i class="fa-solid fa-arrow-up"></i>
+    <a href="#hero" class="back-to-top" id="backToTop" title="Kembali ke atas" aria-label="Kembali ke atas">
+        <i class="fa-solid fa-arrow-up" aria-hidden="true"></i>
     </a>
 
     <!-- ==========================================
         JAVASCRIPT LIBRARIES
     =========================================== -->
     <!-- Bootstrap 5 JS -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js" defer></script>
 
     <!-- AOS JS -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js" defer></script>
 
     <!-- SwiperJS -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/11.0.5/swiper-bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/11.0.5/swiper-bundle.min.js" defer></script>
 
     <!-- Chart.js -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js" defer></script>
 
     <!-- Lightbox2 -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.5/js/lightbox.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.5/js/lightbox.min.js" defer></script>
 
     <!-- Custom JS -->
-    <script src="js/script.js"></script>
+    <script src="js/script.js" defer></script>
 </body>
 </html>

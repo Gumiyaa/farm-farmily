@@ -5,22 +5,6 @@
 document.addEventListener('DOMContentLoaded', function () {
 
     /* ==========================================
-       LOADING SCREEN
-    =========================================== */
-    const loadingScreen = document.getElementById('loadingScreen');
-
-    window.addEventListener('load', function () {
-        setTimeout(function () {
-            loadingScreen.classList.add('hidden');
-        }, 1800);
-    });
-
-    // Fallback: hide loader after 3s even if images not fully loaded
-    setTimeout(function () {
-        loadingScreen.classList.add('hidden');
-    }, 3000);
-
-    /* ==========================================
        SCROLL PROGRESS BAR
     =========================================== */
     const scrollProgress = document.getElementById('scrollProgress');
@@ -111,27 +95,43 @@ document.addEventListener('DOMContentLoaded', function () {
        DARK MODE TOGGLE
     =========================================== */
     const darkModeToggle = document.getElementById('darkModeToggle');
+    const root = document.documentElement;
     const body = document.body;
     const icon = darkModeToggle.querySelector('i');
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)');
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-    // Check saved preference
-    if (localStorage.getItem('theme') === 'dark') {
-        body.setAttribute('data-theme', 'dark');
-        icon.classList.remove('fa-moon');
-        icon.classList.add('fa-sun');
-    }
-
-    darkModeToggle.addEventListener('click', function () {
-        if (body.getAttribute('data-theme') === 'dark') {
-            body.removeAttribute('data-theme');
-            icon.classList.remove('fa-sun');
-            icon.classList.add('fa-moon');
-            localStorage.setItem('theme', 'light');
-        } else {
-            body.setAttribute('data-theme', 'dark');
+    function setTheme(isDark) {
+        if (isDark) {
+            root.setAttribute('data-theme', 'dark');
             icon.classList.remove('fa-moon');
             icon.classList.add('fa-sun');
-            localStorage.setItem('theme', 'dark');
+            darkModeToggle.setAttribute('aria-label', 'Nonaktifkan mode gelap');
+            darkModeToggle.setAttribute('aria-pressed', 'true');
+            darkModeToggle.title = 'Mode terang';
+        } else {
+            root.removeAttribute('data-theme');
+            icon.classList.remove('fa-sun');
+            icon.classList.add('fa-moon');
+            darkModeToggle.setAttribute('aria-label', 'Aktifkan mode gelap');
+            darkModeToggle.setAttribute('aria-pressed', 'false');
+            darkModeToggle.title = 'Mode gelap';
+        }
+    }
+
+    // Sinkronkan ikon dengan tema yang sudah dipasang di <head>
+    setTheme(root.getAttribute('data-theme') === 'dark');
+
+    darkModeToggle.addEventListener('click', function () {
+        var isDark = root.getAttribute('data-theme') === 'dark';
+        setTheme(!isDark);
+        localStorage.setItem('theme', isDark ? 'light' : 'dark');
+    });
+
+    // Ikuti preferensi sistem jika pengguna belum memilih tema
+    prefersDark.addEventListener('change', function (e) {
+        if (!localStorage.getItem('theme')) {
+            setTheme(e.matches);
         }
     });
 
@@ -143,7 +143,9 @@ document.addEventListener('DOMContentLoaded', function () {
         counters.forEach(function (counter) {
             if (counter.dataset.animated === 'true') return;
 
-            var target = parseInt(counter.getAttribute('data-target'));
+            var rawTarget = counter.getAttribute('data-target');
+            var target = parseFloat(rawTarget);
+            var decimals = rawTarget.indexOf('.') !== -1 ? 1 : 0;
             var current = 0;
             var increment = target / 60;
             var duration = 2000;
@@ -152,10 +154,10 @@ document.addEventListener('DOMContentLoaded', function () {
             function updateCounter() {
                 current += increment;
                 if (current < target) {
-                    counter.textContent = Math.ceil(current);
+                    counter.textContent = decimals ? current.toFixed(1) : Math.ceil(current);
                     setTimeout(updateCounter, stepTime);
                 } else {
-                    counter.textContent = target;
+                    counter.textContent = decimals ? target.toFixed(1) : target;
                 }
             }
 
@@ -181,42 +183,46 @@ document.addEventListener('DOMContentLoaded', function () {
     /* ==========================================
        AOS (Animate On Scroll) INIT
     =========================================== */
-    AOS.init({
-        duration: 800,
-        easing: 'ease-in-out',
-        once: true,
-        offset: 80,
-        disable: 'mobile'
-    });
+    if (typeof AOS !== 'undefined') {
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true,
+            offset: 80,
+            disable: reduceMotion ? true : 'mobile'
+        });
+    }
 
     /* ==========================================
        SWIPER TESTIMONIALS
     =========================================== */
-    new Swiper('.testimonial-swiper', {
-        slidesPerView: 1,
-        spaceBetween: 30,
-        loop: true,
-        autoplay: {
-            delay: 5000,
-            disableOnInteraction: false,
-        },
-        pagination: {
-            el: '.swiper-pagination',
-            clickable: true,
-        },
-        navigation: {
-            nextEl: '.swiper-button-next',
-            prevEl: '.swiper-button-prev',
-        },
-        breakpoints: {
-            768: {
-                slidesPerView: 2,
+    if (typeof Swiper !== 'undefined' && document.querySelector('.testimonial-swiper')) {
+        new Swiper('.testimonial-swiper', {
+            slidesPerView: 1,
+            spaceBetween: 30,
+            loop: true,
+            autoplay: reduceMotion ? false : {
+                delay: 5000,
+                disableOnInteraction: false,
             },
-            1024: {
-                slidesPerView: 3,
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
             },
-        },
-    });
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+            breakpoints: {
+                768: {
+                    slidesPerView: 2,
+                },
+                1024: {
+                    slidesPerView: 3,
+                },
+            },
+        });
+    }
 
     /* ==========================================
        LIGHTBOX CONFIG
@@ -236,7 +242,7 @@ document.addEventListener('DOMContentLoaded', function () {
     =========================================== */
     var harvestCtx = document.getElementById('harvestChart');
 
-    if (harvestCtx) {
+    if (harvestCtx && typeof Chart !== 'undefined') {
         var chartInstance = new Chart(harvestCtx.getContext('2d'), {
             type: 'bar',
             data: {
@@ -328,12 +334,14 @@ document.addEventListener('DOMContentLoaded', function () {
 
         // Update chart colors for dark mode
         function updateChartTheme() {
-            var isDark = body.getAttribute('data-theme') === 'dark';
+            var isDark = root.getAttribute('data-theme') === 'dark';
             chartInstance.options.scales.y.grid.color = isDark ? 'rgba(255,255,255,0.1)' : 'rgba(0,0,0,0.05)';
             chartInstance.options.scales.y.ticks.color = isDark ? '#B0B0B0' : '#757575';
             chartInstance.options.scales.x.ticks.color = isDark ? '#E8E8E8' : '#212121';
             chartInstance.update();
         }
+
+        updateChartTheme();
 
         // Observer for dark mode changes
         var darkModeObserver = new MutationObserver(function (mutations) {
@@ -344,7 +352,7 @@ document.addEventListener('DOMContentLoaded', function () {
             });
         });
 
-        darkModeObserver.observe(body, { attributes: true });
+        darkModeObserver.observe(root, { attributes: true });
     }
 
     /* ==========================================
@@ -352,7 +360,7 @@ document.addEventListener('DOMContentLoaded', function () {
     =========================================== */
     function createParticles() {
         var container = document.getElementById('heroParticles');
-        if (!container) return;
+        if (!container || reduceMotion) return;
 
         for (var i = 0; i < 15; i++) {
             var particle = document.createElement('div');
@@ -374,36 +382,52 @@ document.addEventListener('DOMContentLoaded', function () {
     =========================================== */
     document.querySelectorAll('a[href^="#"]').forEach(function (anchor) {
         anchor.addEventListener('click', function (e) {
-            e.preventDefault();
             var targetId = this.getAttribute('href');
-            if (targetId === '#') return;
+            if (targetId === '#') {
+                e.preventDefault();
+                return;
+            }
 
             var targetEl = document.querySelector(targetId);
-            if (targetEl) {
-                var offsetTop = targetEl.offsetTop - 80;
-                window.scrollTo({
-                    top: offsetTop,
-                    behavior: 'smooth'
-                });
+            if (!targetEl) return;
 
-                // Close mobile navbar
-                var navbarCollapse = document.getElementById('navbarContent');
-                if (navbarCollapse.classList.contains('show')) {
-                    var bsCollapse = bootstrap.Collapse.getInstance(navbarCollapse);
-                    if (bsCollapse) {
-                        bsCollapse.hide();
-                    }
+            e.preventDefault();
+            var offsetTop = targetEl.getBoundingClientRect().top + window.pageYOffset - 80;
+            window.scrollTo({
+                top: offsetTop,
+                behavior: reduceMotion ? 'auto' : 'smooth'
+            });
+
+            // Pindahkan fokus untuk pengguna keyboard / screen reader
+            targetEl.setAttribute('tabindex', '-1');
+            targetEl.focus({ preventScroll: true });
+
+            // Close mobile navbar
+            var navbarCollapse = document.getElementById('navbarContent');
+            if (navbarCollapse && navbarCollapse.classList.contains('show') && typeof bootstrap !== 'undefined') {
+                var bsCollapse = bootstrap.Collapse.getInstance(navbarCollapse);
+                if (bsCollapse) {
+                    bsCollapse.hide();
                 }
             }
         });
     });
 
     /* ==========================================
-       CONTACT FORM HANDLER
+       CONTACT FORM HANDLER (WHATSAPP)
     =========================================== */
     var contactForm = document.getElementById('contactForm');
 
     if (contactForm) {
+        var formStatus = document.getElementById('formStatus');
+        var whatsappNumber = (contactForm.dataset.whatsapp || '6281234567890').replace(/\D/g, '');
+
+        function showFormStatus(message, type) {
+            if (!formStatus) return;
+            formStatus.textContent = message;
+            formStatus.className = 'form-status show ' + type;
+        }
+
         contactForm.addEventListener('submit', function (e) {
             e.preventDefault();
 
@@ -412,21 +436,42 @@ document.addEventListener('DOMContentLoaded', function () {
             var message = document.getElementById('contactMessage').value.trim();
 
             if (!name || !email || !message) {
-                alert('Mohon lengkapi semua kolom formulir!');
+                showFormStatus('Mohon lengkapi nama, email, dan pesan Anda.', 'error');
                 return;
             }
 
-            // Simple email validation
             var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
             if (!emailRegex.test(email)) {
-                alert('Mohon masukkan alamat email yang valid!');
+                showFormStatus('Mohon masukkan alamat email yang valid.', 'error');
                 return;
             }
 
-            // Success (in production, send to server)
-            alert('Terima kasih, ' + name + '! Pesan Anda telah berhasil dikirim. Kami akan segera menghubungi Anda.');
-            contactForm.reset();
+            var text = 'Halo Pertanian Keluarga,\n\n'
+                + 'Nama: ' + name + '\n'
+                + 'Email: ' + email + '\n\n'
+                + 'Pesan:\n' + message;
+
+            var url = 'https://wa.me/' + whatsappNumber + '?text=' + encodeURIComponent(text);
+
+            // Gunakan anchor agar tetap kompatibel dengan pemblokir popup
+            var link = document.createElement('a');
+            link.href = url;
+            link.target = '_blank';
+            link.rel = 'noopener';
+            document.body.appendChild(link);
+            link.click();
+            link.remove();
+
+            showFormStatus('WhatsApp dibuka. Silakan tekan tombol kirim di aplikasi WhatsApp Anda.', 'success');
         });
+    }
+
+    /* ==========================================
+       FOOTER YEAR
+    =========================================== */
+    var yearEl = document.getElementById('currentYear');
+    if (yearEl) {
+        yearEl.textContent = new Date().getFullYear();
     }
 
 });
